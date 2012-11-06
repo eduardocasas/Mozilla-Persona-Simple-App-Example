@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Mozilla Persona Example App</title>
+        <script src="https://login.persona.org/include.js"></script>
+        <script src="js/jquery.js"></script>
+        <script src="js/file.js"></script>
+        <script type="text/javascript">
+            <?php if ($session_open) { ?>
+                var user_email = '<?php echo $user_email; ?>';
+            <?php } else { ?>
+                var user_email = null;
+            <?php } ?>
+        </script>
+    </head>
+    <body>
+        <div>
+            <?php if ($session_open) { ?>
+                <button id="logout">logout</button>
+                User Session Opened. :)
+            <?php } else { ?>
+                <button id="login">login</button>
+                User Session Closed. :(
+            <?php } ?>
+        </div>
+    </body>
+</html>
