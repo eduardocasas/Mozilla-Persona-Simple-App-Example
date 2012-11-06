@@ -32,7 +32,7 @@ $(document).ready
                             action: 'login',
                             assertion: assertion
                         },
-                        function(response, status, error)
+                        function(response, status)
                         {
                             if (status == 'success') {
                                window.location.reload();
@@ -50,8 +50,9 @@ $(document).ready
                         },
                         function(response, status)
                         {
-
-                            window.location.reload();
+                            if (status == 'success') {
+                                window.location.reload();
+                            }
                         }
                     );
                 }
